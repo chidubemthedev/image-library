@@ -44,21 +44,21 @@ const Header = ({ search, handleSearch }: Props) => {
         page or upload directly from your device.
       </p>
 
-      <div className="md:flex hidden justify-between mt-[32px]">
-        <div className="flex gap-[12px] items-center">
+      <div className="flex md:flex-row flex-col-reverse  md:justify-between mt-[20px] md:mt-[32px]">
+        <div className="flex flex-col-reverse md:flex-row gap-[20px] md:gap-[12px] items-center space-y-[20px] md:space-y-0">
           <div
             ref={dropdownRef}
-            className="relative flex px-3 space-x-2 h-[44px] border-[#E0E0E0] w-full border rounded-[4px] items-center bg-[#F2F2F2]"
+            className="relative flex justify-between px-3 space-x-2 h-[44px] border-[#E0E0E0] w-full border rounded-[4px] items-center bg-[#F2F2F2]"
           >
             Sort By: Date Uploaded{" "}
             <span
               onClick={() => setShowDropdown(!showDropdown)}
-              className="ml-[7px] hover:cursor-pointer"
+              className="hover:cursor-pointer"
             >
               <DropdownIcon />
             </span>
             {showDropdown && (
-              <div className="absolute right-[-40px] top-[60px] rounded-[8px] shadow-[0_0_12px_0_#EEEEEE] overflow-hidden z-30 bg-white">
+              <div className="absolute right-0 md:right-[-40px] top-[60px] rounded-[8px] shadow-[0_0_12px_0_#EEEEEE] overflow-hidden z-30 bg-white">
                 <ul className="min-w-max w-[260px] m-2 space-y-1">
                   <li className="p-[16px] flex items-center justify-between">
                     <p className="text-[12px] text-[#1E1E1E]">
@@ -88,47 +88,6 @@ const Header = ({ search, handleSearch }: Props) => {
           <Search search={search} handleSearch={handleSearch} />
         </div>
         <Button />
-      </div>
-
-      <div className="md:hidden flex flex-col mt-[20px] space-y-[20px]">
-        <Button />
-        <Search search={search} handleSearch={handleSearch} />
-        <div
-          ref={dropdownRef}
-          className="relative flex px-3 space-x-2 h-[44px] border-[#E0E0E0] w-full border rounded-[4px] items-center bg-[#F2F2F2]"
-        >
-          Sort By: Date Uploaded{" "}
-          <span
-            onClick={() => setShowDropdown(!showDropdown)}
-            className="ml-[7px] hover:cursor-pointer"
-          >
-            <DropdownIcon />
-          </span>
-          {showDropdown && (
-            <div className="absolute right-0 top-[60px] rounded-[8px] shadow-[0_0_12px_0_#EEEEEE] overflow-hidden z-30 bg-white">
-              <ul className="min-w-max w-[260px] m-2 space-y-1">
-                <li className="p-[16px] flex items-center justify-between">
-                  <p className="text-[12px] text-[#1E1E1E]">Alphabetical A-Z</p>
-                  <input
-                    type="checkbox"
-                    name="alphabetical"
-                    id=""
-                    className="custom-checkbox"
-                  />
-                </li>
-                <li className="p-[16px] flex items-center justify-between">
-                  <p className="text-[12px] text-[#1E1E1E]">Date uploaded </p>
-                  <input
-                    type="checkbox"
-                    name="time"
-                    id=""
-                    className="custom-checkbox"
-                  />
-                </li>
-              </ul>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
