@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/Header";
 import ImageLibrary from "@/components/ImageLibrary";
-import ImageModal from "@/components/UI/ImageModal";
+import ImageModal from "@/components/UI/Modals/ImageModal";
 import { useEffect, useState } from "react";
 
 const LIBRARY = [

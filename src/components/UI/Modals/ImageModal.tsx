@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { CancelIcon, DropdownIcon } from "../Icons";
+import { CancelIcon, DropdownIcon } from "../../Icons";
+import DeleteModal from "./DeleteModal";
 
 type ModalProps = {
   isOpen: boolean;
@@ -10,6 +11,7 @@ type ModalProps = {
 const ImageModal = ({ isOpen, onClose, children }: ModalProps) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -57,7 +59,10 @@ const ImageModal = ({ isOpen, onClose, children }: ModalProps) => {
                     <li className="flex items-center hover:cursor-pointer w-[148px] h-[44px]">
                       Download image
                     </li>
-                    <li className="flex items-center hover:cursor-pointer text-[#F01C1C] w-[148px] h-[44px]">
+                    <li
+                      onClick={() => setIsDeleteModalOpen(true)}
+                      className="flex items-center hover:cursor-pointer text-[#F01C1C] w-[148px] h-[44px]"
+                    >
                       Delete
                     </li>
                   </ul>
@@ -72,6 +77,13 @@ const ImageModal = ({ isOpen, onClose, children }: ModalProps) => {
         </div>
         {children}
       </div>
+
+      <DeleteModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+      >
+        <div>are you sure you want to delete?</div>
+      </DeleteModal>
     </div>
   );
 };
