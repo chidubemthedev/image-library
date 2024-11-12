@@ -37,8 +37,8 @@ const ImageModal = ({ isOpen, onClose, children }: ModalProps) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative flex flex-col bg-white items-center justify-between w-full max-h-[100vh] overflow-y-auto scrollbar-hide">
-        <div className="w-full flex items-center justify-between sticky top-0 bg-white px-6 pt-6">
+      <div className="relative flex flex-col px-6 bg-white items-center justify-between w-full max-h-[100vh] overflow-y-auto scrollbar-hide">
+        <div className="w-full flex items-center justify-between sticky top-0 bg-white pt-6">
           <button onClick={onClose}>
             <CancelIcon />
           </button>

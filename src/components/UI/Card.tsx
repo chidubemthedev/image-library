@@ -48,7 +48,7 @@ const Card = ({ title, image }: Props) => {
       </div>
 
       <div
-        className="rounded-[2px] bg-white absolute top-[8px] right-[4px]"
+        className="rounded-[2px] bg-white absolute top-[8px] right-[4px] z-50"
         ref={dropdownRef}
       >
         <div
