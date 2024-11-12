@@ -75,18 +75,22 @@ export default function Home() {
               <h2 className="bg-[#F4F4F4] border border-[#E6E6E6] h-full w-[193px] flex items-center pl-[16px] text-[#1E1E1E] text-[13px] font-[600] tracking-[-0.52px]">
                 Name
               </h2>
-              <p className="capitalize bg-white border border-[#E6E6E6] h-full w-full flex items-center text-[#1E1E1E] text-[13px] font-[600] tracking-[-0.52px] pl-[15px]">
-                {selectedImage?.title}
-              </p>
+              <input
+                type="text"
+                defaultValue={selectedImage?.title}
+                className="capitalize bg-white border border-[#E6E6E6] h-full w-full flex items-center text-[#1E1E1E] text-[13px] font-[600] tracking-[-0.52px] pl-[15px] focus:outline-none"
+              />
             </div>
 
             <div className="flex rounded-[4px] border border-[#E6E6E6] h-[48px] items-center">
               <h2 className="bg-[#F4F4F4] border border-[#E6E6E6] h-full w-[193px] flex items-center pl-[16px] text-[#1E1E1E] text-[13px] font-[600] tracking-[-0.52px]">
                 Business Name
               </h2>
-              <p className="capitalize bg-white border border-[#E6E6E6] h-full w-full flex items-center text-[#1E1E1E] text-[13px] font-[600] tracking-[-0.52px] pl-[15px]">
-                {selectedImage?.title} Business name
-              </p>
+              <input
+                type="text"
+                defaultValue={`${selectedImage?.title} Business name`}
+                className="capitalize bg-white border border-[#E6E6E6] h-full w-full flex items-center text-[#1E1E1E] text-[13px] font-[600] tracking-[-0.52px] pl-[15px] focus:outline-none"
+              />
             </div>
           </div>
 
