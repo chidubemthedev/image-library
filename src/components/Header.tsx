@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { DropdownIcon } from "./Icons";
-import Button from "./UI/Button";
 import Search from "./UI/Search";
 
 type Props = {
@@ -87,7 +86,26 @@ const Header = ({ search, handleSearch }: Props) => {
 
           <Search search={search} handleSearch={handleSearch} />
         </div>
-        <Button />
+
+        <button
+          onClick={() => {
+            // Logic to handle image upload
+            const input = document.createElement("input");
+            input.type = "file";
+            input.accept = "image/*";
+            input.onchange = (event) => {
+              const file = (event.target as HTMLInputElement).files?.[0];
+              if (file) {
+                // Handle the file upload
+                console.log("Uploading:", file);
+              }
+            };
+            input.click();
+          }}
+          className="w-fit rounded-[4px] bg-[#2B50D6] text-white px-[12px] py-[10px] hover:scale-110 transition-all duration-300"
+        >
+          Upload
+        </button>
       </div>
     </div>
   );
