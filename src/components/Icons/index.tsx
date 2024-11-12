@@ -55,3 +55,22 @@ export const DropdownIcon = () => (
     />
   </svg>
 );
+
+export const CancelIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="44"
+    height="44"
+    viewBox="0 0 44 44"
+    fill="none"
+  >
+    <rect width="44" height="44" rx="4" fill="#F0F0F0" />
+    <path
+      d="M27 27L22 22M22 22L17 17M22 22L27 17M22 22L17 27"
+      stroke="#1E1E1E"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
